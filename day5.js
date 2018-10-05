@@ -27,22 +27,12 @@ const GRID = [
     ];
     
 const convertColumn = (coordinate) => {
-  // 1st row has 10 columns:
-  // a, b, c, d, e, f, g, h, i, j
-  // So, the letter should be associated with the column number
-  // where a --> column 1
-  // _____ b --> column 2, etc.
-  // 
-  // 1. fetch the first letter of the coordinate string
-  // 2. convert that letter to lowercase (i.e. standardized).
-  // 3. Find out if the coordinate letter is in the array of letters in GRID
-  // 4. If so, then fetch the index position of that letter within the letters array. (can use the IndexOf function in JS).
   const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
   const coord_letter = coordinate[0].toLowerCase();
   const col_index = letters.indexOf(coord_letter);
-  const col_number = col_index + 1;
+  const col_number = col_index;
   
   return col_number;
 };
     
-console.log(convertColumn("A4"));
+console.log(convertColumn("j4"));
