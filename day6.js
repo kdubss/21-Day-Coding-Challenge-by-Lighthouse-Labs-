@@ -35,7 +35,6 @@ const lightCell = coord => {
   };
   // Function to return the row number:
   const convertRow = coordinate => {
-    const rows = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     let coord_num;
     if (coordinate.length === 3) {
       coord_num = 9;
@@ -44,7 +43,7 @@ const lightCell = coord => {
     }
     
     return coord_num;
-  }
+  };
   const grid_row = convertRow(coord);
   const grid_col = convertColumn(coord);
   
