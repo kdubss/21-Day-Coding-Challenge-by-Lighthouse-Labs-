@@ -40,9 +40,9 @@ const lightCell = coord => {
     return coord_num;
   };
   const grid_row = convertRow(coord);
-  const grid_col = convertColumn(coord);
+  const row_col = convertColumn(coord);
   
-  return GRID[grid_row][grid_col];
+  return GRID[grid_row][row_col];
 };
 
 console.log(lightCell("B10"));
