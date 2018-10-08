@@ -50,6 +50,6 @@ const isCurrent = coordinate => {
   return is_current;
 };
 
-const testFunction = coordinate => {
-  
-};
+for (i = 1; i < 11; i++) {
+  console.log(isCurrent("E" + i));
+}
