@@ -24,7 +24,6 @@ const GRID = [
 ];
 
 const lightCell = coord => {
-  // Function to return the column number
   const convertColumn = coordinate => {
     const cols = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
     const coord_letter = coordinate[0].toLowerCase();
@@ -33,7 +32,6 @@ const lightCell = coord => {
     
     return col_number;
   };
-  // Function to return the row number:
   const convertRow = coordinate => {
     const coord_num = coordinate.length === 3 ? 9 : coordinate[1] - 1;
     
@@ -44,5 +42,3 @@ const lightCell = coord => {
   
   return GRID[grid_row][row_col];
 };
-
-console.log(lightCell("B10"));

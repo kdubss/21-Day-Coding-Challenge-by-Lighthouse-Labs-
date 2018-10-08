@@ -23,7 +23,7 @@ const GRID = [
   ["", "^", "", "", "~", "~", "", "", "", ""],
 ];
 
-const lightCell = coord => {
+const isRock = coordinate => {
   const convertColumn = coordinate => {
     const cols = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
     const coord_letter = coordinate[0].toLowerCase();
@@ -37,23 +37,14 @@ const lightCell = coord => {
     
     return coord_num;
   };
-  const grid_row = convertRow(coord);
-  const row_col = convertColumn(coord);
+  const lightCell = coord => {
+    const grid_row = convertRow(coord);
+    const row_col = convertColumn(coord);
+    
+    return GRID[grid_row][row_col];
+  };
+  const rock = "^";
+  const is_rock = lightCell(coordinate) === rock ? true : false;
   
-  return GRID[grid_row][row_col];
+  return is_rock;
 };
-
-
-const isRock = (coord) => {
-  const is_rock = lightCell(coord);
-  const is_rock_bool = is_rock === "^" ? true : false;
-  
-  return is_rock_bool;
-};
-
-console.log(isRock("D1"));
-console.log(isRock("B10"));
-console.log(isRock("I4"));
-console.log(isRock("I8"));
-console.log(isRock("I9"));
-console.log(isRock("I10"));
