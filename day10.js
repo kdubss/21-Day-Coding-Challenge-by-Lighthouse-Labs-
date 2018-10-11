@@ -21,10 +21,6 @@ const GRID = [
       ["", "^", "", "", "~", "~", "", "", "", ""],
     ];
     
-const lightRow = row_num => {
-  const row = GRID[row_num - 1];
-  
-  return row;
-};
+const lightRow = row_num => GRID[row_num - 1];
 
 console.log(lightRow(2));
