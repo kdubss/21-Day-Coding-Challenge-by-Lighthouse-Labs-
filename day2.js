@@ -24,11 +24,7 @@ const GRID = [
       ["", "^", "", "", "~", "~", "", "", "", ""],
     ];
     
-const countColumns = () => {
-  // No. columns will be the length of elements in the first row.
-  const grid_first_row = GRID[0];
-  return grid_first_row.length;
-};
+const countColumns = () => GRID[0].length;
 
 // Testing:
 console.log(countColumns());

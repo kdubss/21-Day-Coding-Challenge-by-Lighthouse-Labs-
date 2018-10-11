@@ -27,12 +27,11 @@ const GRID = [
     ];
     
 const convertColumn = (coordinate) => {
-  const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
-  const coord_letter = coordinate[0].toLowerCase();
+  const letters = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
+  const coord_letter = coordinate[0].toUpperCase();
   const col_index = letters.indexOf(coord_letter);
-  const col_number = col_index;
   
-  return col_number;
+  return col_index;
 };
     
 console.log(convertColumn("j4"));
