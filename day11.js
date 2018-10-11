@@ -22,8 +22,13 @@ const GRID = [
     ];
     
 const lightColumn = col_letter => {
-  const row_columns = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
-  const col_index = row_columns.indexOf(col_letter);
+  const convertColumn = coord => {
+    const row_columns = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+    const col_index = row_columns.indexOf(col_letter);
+
+    return col_index;
+  };
+  const col_index = convertColumn(col_letter)
   const col_array = [];
   
   for (let row = 0; row < GRID.length; row++) {
