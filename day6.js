@@ -24,13 +24,12 @@ const GRID = [
 ];
 
 const lightCell = coord => {
-  const convertColumn = coordinate => {
-    const cols = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
-    const coord_letter = coordinate[0].toLowerCase();
-    const col_index = cols.indexOf(coord_letter);
-    const col_number = col_index;
+  const convertColumn = (coordinate) => {
+    const letters = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
+    const coord_letter = coordinate[0].toUpperCase();
+    const col_index = letters.indexOf(coord_letter);
     
-    return col_number;
+    return col_index;
   };
   const convertRow = coordinate => {
     const coord_num = coordinate.length === 3 ? 9 : coordinate[1] - 1;
