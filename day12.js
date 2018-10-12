@@ -42,7 +42,7 @@ const lightCell = coordinate => {
     
     return is_row_valid;
   };
-  const is_coord_valid = convertRow(coordinate) && convertColumn(coordinate) ? true : false;
+  const is_coord_valid = convertRow(coordinate) && convertColumn(coordinate)
   
   return is_coord_valid;
 };
