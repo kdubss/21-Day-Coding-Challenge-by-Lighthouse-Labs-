@@ -22,10 +22,11 @@ const GRID = [
     ];
     
 const lightColumn = col_letter => {
-  const convertColumn = coord => {
-    const row_columns = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
-    const col_index = row_columns.indexOf(col_letter);
-
+  const convertColumn = coordinate => {
+    const letters = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
+    const coord_letter = coordinate[0].toUpperCase();
+    const col_index = letters.indexOf(coord_letter);
+    
     return col_index;
   };
   const col_index = convertColumn(col_letter)

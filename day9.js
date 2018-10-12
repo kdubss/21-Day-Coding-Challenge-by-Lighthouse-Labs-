@@ -24,10 +24,10 @@ const GRID = [
     ];
     
 const isShip = coordinate => {
-  const convertColumn = coord => {
-    const cols = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
-    const coord_letter = coord[0].toUpperCase();
-    const col_index = cols.indexOf(coord_letter);
+  const convertColumn = coordinate => {
+    const letters = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
+    const coord_letter = coordinate[0].toUpperCase();
+    const col_index = letters.indexOf(coord_letter);
     
     return col_index;
   };
