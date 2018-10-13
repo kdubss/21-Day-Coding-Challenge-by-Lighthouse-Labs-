@@ -16,11 +16,61 @@
 // - must loop through all rows and all columns of GRID
 // - As looping through each cell, 
 
-const GRID = require("./grid").GRID;
-const countRows = require("./countRows").countRows;
-const countColumns = require("./countColumns").countColumns;
-const isCurrent = require("./isCurrent").isCurrent;
-const isRock = require("./isRock").isRock;
+const GRID = [
+      ["", "", "", "^", "", "", "", "", "", ""],
+      ["", "", "v", "", "~", "", "", "", "", ""],
+      ["", "v", "", "", "^", "^", "", "", "", ""],
+      ["", "", "", "", "^", "^", "", "", "", ""],
+      ["", "", "", "", "", "", "", "", "v", ""],
+      ["", "", "", "", "", "", "", "", "", ""],
+      ["", "", "", "", "", "", "", "", "", ""],
+      ["", "^", "~", "~", "", "", "", "^", "", ""],
+      ["", "^", "", "~", "~", "", "", "", "", ""],
+      ["", "^", "", "", "~", "~", "", "", "", ""],
+    ];
+
+const countRows = () => GRID.length;
+
+const countColumns = () => GRID[0].length;
+
+const convertRow = coordinate => {
+  const row_num = coordinate.slice(1);
+  const is_row_valid = row_num <= 10;
+  const row_index = is_row_valid ? parseInt(row_num - 1) : console.log(`Row index ${parseInt(row_num)} is an invalid row index of GRID`);
+  
+  return row_index;
+};
+
+const convertColumn = coordinate => {
+  const letters = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
+  const coord_letter = coordinate[0].toUpperCase();
+  const letter_index = letters.indexOf(coord_letter);
+  const col_index = letter_index <= countColumns() - 1 ? letter_index : console.log(`Column ${coord_letter} is not a valid column in GRID!`);
+  
+  return col_index;
+};
+
+const lightCell = coord => {
+  const row_index = convertRow(coord);
+  const column_index = convertColumn(coord);
+  const grid_cell = row_index < countRows() && column_index < countColumns() ? GRID[row_index][column_index] : console.log("Invalid GRID coordinates");
+
+  return grid_cell;
+};
+
+const isRock = coord => {
+  const rock = "^";
+  const is_rock = lightCell(coord) === rock;
+  
+  return is_rock;
+};
+
+const isCurrent = coord => {
+  const current = "~";
+  const is_current = lightCell(coord) === current;
+  
+  return is_current;
+};
 
 const allRocks = () => {
   const filtered_rocks_array = [];
