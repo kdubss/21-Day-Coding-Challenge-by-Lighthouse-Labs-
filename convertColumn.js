@@ -1,5 +1,5 @@
 // ./convertColumn.js
-const grid = require("./grid").GRID;
+const GRID = require("./grid").GRID;
 const countColumns = require("./countColumns").countColumns;
 
 const convertColumn = coordinate => {

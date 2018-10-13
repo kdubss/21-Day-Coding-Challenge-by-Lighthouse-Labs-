@@ -1,7 +1,7 @@
 // ./countRows.js
-const grid = require("./grid.js").GRID;
+const GRID = require("./grid.js").GRID;
 
-const countRows = () => grid.length;
+const countRows = () => GRID.length;
 
 module.exports = {
   countRows
