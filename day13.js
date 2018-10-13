@@ -19,14 +19,18 @@
 const GRID = require("./grid").GRID;
 const countRows = require("./countRows").countRows;
 const countColumns = require("./countColumns").countColumns;
+const isCurrent = require("./isCurrent").isCurrent;
+const isRock = require("./isRock").isRock;
 
 const allRocks = () => {
   const filtered_rocks_array = [];
   
-  for (let row = 0; row < countRows; row++) {
-    filtered_rocks_array.push(GRID[row].filter((col, ind) => {
-      return col === "^";
-    }));
+  for (let row = 0; row < countRows(); row++) {
+    for (let col = 0; col < countColumns(); col++) {
+      if (isRock("abcdefghij".toUpperCase().charAt(col) + (row + 1).toString())) {
+        filtered_rocks_array.push("abcdefghij".toUpperCase().charAt(col) + (row + 1).toString());
+      }
+    }
   }
   
   return filtered_rocks_array;
@@ -42,6 +46,9 @@ const allCurrents = () => {
       }
     }
   }
+  
+  return filtered_currents_array;
 };
 
+console.log(allRocks());
 console.log(allCurrents());
