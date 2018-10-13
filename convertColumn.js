@@ -7,3 +7,7 @@ const convertColumn = coordinate => {
   
   return col_index;
 };
+
+module.exports = {
+  convertColumn
+};
