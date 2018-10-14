@@ -28,77 +28,42 @@ const GRID = [
       ["", "^", "", "~", "~", "", "", "", "", ""],
       ["", "^", "", "", "~", "~", "", "", "", ""],
     ];
-
-const countRows = () => GRID.length;
-
-const countColumns = () => GRID[0].length;
-
-const convertRow = coordinate => {
-  const row_num = coordinate.slice(1);
-  const is_row_valid = row_num <= 10;
-  const row_index = is_row_valid ? parseInt(row_num - 1) : console.log(`Row index ${parseInt(row_num)} is an invalid row index of GRID`);
+    
+const allRocksTest = () => {
+  const countRows = () => GRID.length;
+  const countColumns = () => GRID[0].length;
   
-  return row_index;
-};
-
-const convertColumn = coordinate => {
-  const letters = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
-  const coord_letter = coordinate[0].toUpperCase();
-  const letter_index = letters.indexOf(coord_letter);
-  const col_index = letter_index <= countColumns() - 1 ? letter_index : console.log(`Column ${coord_letter} is not a valid column in GRID!`);
-  
-  return col_index;
-};
-
-const lightCell = coord => {
-  const row_index = convertRow(coord);
-  const column_index = convertColumn(coord);
-  const grid_cell = row_index < countRows() && column_index < countColumns() ? GRID[row_index][column_index] : console.log("Invalid GRID coordinates");
-
-  return grid_cell;
-};
-
-const isRock = coord => {
+  const all_rocks_arr = [];
   const rock = "^";
-  const is_rock = lightCell(coord) === rock;
-  
-  return is_rock;
-};
-
-const isCurrent = coord => {
-  const current = "~";
-  const is_current = lightCell(coord) === current;
-  
-  return is_current;
-};
-
-const allRocks = () => {
-  const filtered_rocks_array = [];
-  
-  for (let row = 0; row < countRows(); row++) {
-    for (let col = 0; col < countColumns(); col++) {
-      if (isRock("abcdefghij".toUpperCase().charAt(col) + (row + 1).toString())) {
-        filtered_rocks_array.push("abcdefghij".toUpperCase().charAt(col) + (row + 1).toString());
+  for (row = 0; row < countRows(); row++) {
+    for (col = 0; col < countColumns(); col++) {
+      if (GRID[row][col] === rock) {
+        const coord = "abcdefghijklmnopqrstuvwxyz".toUpperCase().charAt(col) + (row + 1).toString()
+        all_rocks_arr.push(coord)
       }
     }
   }
   
-  return filtered_rocks_array;
+  return all_rocks_arr;
 };
 
-const allCurrents = () => {
-  const filtered_currents_array = [];
+const allCurrentsTest = () => {
+  const countRows = () => GRID.length;
+  const countColumns = () => GRID[0].length;
   
-  for (let row = 0; row < countRows(); row++) {
-    for (let col = 0; col < countColumns(); col++) {
-      if (isCurrent("abcdefghij".toUpperCase().charAt(col) + (row + 1).toString())) {
-        filtered_currents_array.push("abcdefghij".toUpperCase().charAt(col) + (row + 1).toString());
+  const all_currents_arr = [];
+  const current = "~"
+  for (row = 0; row < countRows(); row++) {
+    for (col = 0; col < countColumns(); col++) {
+      if (GRID[row][col] === current) {
+        const coord = "abcdefghijklmnopqrstuvwxyz".toUpperCase().charAt(col) + (row + 1).toString()
+        all_currents_arr.push(coord)
       }
     }
   }
   
-  return filtered_currents_array;
-};
+  return all_currents_arr;
+}
 
-console.log(allRocks());
-console.log(allCurrents());
+console.log(allCurrentsTest());
+console.log(allRocksTest());
