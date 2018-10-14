@@ -1,6 +1,6 @@
 // ./convertColumn.js
-const GRID = require("./functions/grid").GRID;
-const countColumns = require("./functions/countColumns").countColumns;
+const GRID = require("./grid").GRID;
+const countColumns = require("./countColumns").countColumns;
 
 const convertColumn = coordinate => {
   const letters = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");

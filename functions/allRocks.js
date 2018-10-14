@@ -1,7 +1,7 @@
 // ./allRocks.js
-const GRID = require("./functions/grid").GRID;
-const countRows = require("./functions/countRows").countRows;
-const countColumns = require("./functions/countColumns").countColumns;
+const GRID = require("./grid").GRID;
+const countRows = require("./countRows").countRows;
+const countColumns = require("./countColumns").countColumns;
 
 const allRocks = () => {
   const all_rocks_arr = [];

@@ -1,6 +1,6 @@
 // ./isRock.js
-const GRID = require("./functions/grid").GRID;
-const lightCell = require("./functions/lightCell").lightCell;
+const GRID = require("./grid").GRID;
+const lightCell = require("./lightCell").lightCell;
 
 const isRock = coord => {
   const rock = "^";

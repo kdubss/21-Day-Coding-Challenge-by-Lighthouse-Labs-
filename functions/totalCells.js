@@ -1,7 +1,7 @@
 // ./totalCells.js
-const grid = require("./functions/grid").GRID;
-const countRows = require("./functions/countRows").countRows;
-const countColumns = require("./functions/countColumns").countColumns;
+const grid = require("./grid").GRID;
+const countRows = require("./countRows").countRows;
+const countColumns = require("./countColumns").countColumns;
 
 const totalCells = () => countColumns() * countRows();
 

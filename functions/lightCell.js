@@ -1,9 +1,9 @@
 // ./lightCell.js
-const GRID = require("./functions/grid").GRID;
-const convertColumn = require("./functions/convertColumn").convertColumn;
-const convertRow = require("./functions/convertRow").convertRow;
-const countColumns = require("./functions/countColumns").countColumns;
-const countRows = require("./functions/countRows").countRows;
+const GRID = require("./grid").GRID;
+const convertColumn = require("./convertColumn").convertColumn;
+const convertRow = require("./convertRow").convertRow;
+const countColumns = require("./countColumns").countColumns;
+const countRows = require("./countRows").countRows;
 
 const lightCell = coord => {
   const row_index = convertRow(coord);
