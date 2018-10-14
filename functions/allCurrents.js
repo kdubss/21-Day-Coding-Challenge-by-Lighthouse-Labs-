@@ -1,7 +1,7 @@
 // ./functions/allCurrents.js
-const GRID = require("./grid").GRID;
-const countRows = require("./countRows").countRows;
-const countColumns = require("./countColumns").countColumns;
+const GRID = require("./functions/grid").GRID;
+const countRows = require("./functions/countRows").countRows;
+const countColumns = require("./functions/countColumns").countColumns;
 
 const allCurrents = () => {
   const all_currents_arr = [];

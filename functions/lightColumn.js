@@ -1,6 +1,6 @@
 // ./lightColumn.js
-const GRID = require("./grid").GRID;
-const convertColumn = require("./convertColumn").convertColumn;
+const GRID = require("./functions/grid").GRID;
+const convertColumn = require("./functions/convertColumn").convertColumn;
 
 const lightColumn = coord_letter => {
   const column_index = convertColumn(coord_letter);

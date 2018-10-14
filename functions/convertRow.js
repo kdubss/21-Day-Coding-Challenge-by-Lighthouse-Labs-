@@ -1,6 +1,5 @@
 // ./converRow.js
-
-const grid = require("./grid.js").GRID;
+const GRID = require("./functions/grid.js").GRID;
 
 const convertRow = coordinate => {
   const row_num = coordinate.slice(1);
