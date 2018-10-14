@@ -2,25 +2,22 @@
 const GRID = require("./grid").GRID;
 const countRows = require("./countRows").countRows;
 const countColumns = require("./countColumns").countColumns;
-const isCurrent = require("./isCurrent").isCurrent;
 
 const allCurrents = () => {
-  const filtered_currents_array = [];
+  const all_currents_arr = [];
+  const current = "~";
   
   for (let row = 0; row < countRows(); row++) {
     for (let col = 0; col < countColumns(); col++) {
-      if (isCurrent("abcdefghij".toUpperCase().charAt(col) + (row + 1).toString())) {
-        filtered_currents_array.push(
-          "abcdefghij".toUpperCase().charAt(col) + (row + 1).toString()
-        );
+      if (GRID[row][col] === current) {
+        const current_coord = "abcdefghijklmnopqrstuwxyz".toUpperCase().charAt(col) + (row + 1).toString();
+        all_currents_arr.push(current_coord);
       }
     }
   }
   
-  return filtered_currents_array;
-};
-
-console.log(allCurrents());
+  return all_currents_arr;
+}
 
 module.exports = {
   allCurrents
