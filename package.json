@@ -1,0 +1,28 @@
+{
+  "name": "21-day-coding-challenge-201810__",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.2.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kdubss/21-Day-Coding-Challenge-by-Lighthouse-Labs-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kdubss/21-Day-Coding-Challenge-by-Lighthouse-Labs-/issues"
+  },
+  "homepage": "https://github.com/kdubss/21-Day-Coding-Challenge-by-Lighthouse-Labs-#readme"
+}
