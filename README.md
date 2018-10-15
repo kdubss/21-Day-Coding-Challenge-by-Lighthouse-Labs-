@@ -19,3 +19,10 @@ All daily challenges can be found in the ```challenges``` folder, while the spec
 Mocha/Chai testing can be found in ```test.js``` within the ```test``` folder.
 
 In order to run the tests, ```Mocha/Chai``` must be installed (i.e. ```npm i mocha chai```) to run ```test.js``` (```npm test```).
+
+---
+
+## Getting Started
+
+To get started, you can simply clone the repo, 
+  > git clone https://github.com/kdubss/21-Day-Coding-Challenge-by-Lighthouse-Labs-.git [your-specific-folder]
