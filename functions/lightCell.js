@@ -7,11 +7,13 @@ const countRows = require("./countRows").countRows;
 
 const lightCell = coord => {
   const row_index = convertRow(coord);
-  const column_index = convertColumn(coord);
-  const grid_cell = row_index < countRows() && column_index < countColumns() ? GRID[row_index][column_index] : console.log("Invalid GRID coordinates");
+  const col_index = convertColumn(coord);
+  const grid_cell = row_index < countRows() && col_index < countColumns() ? GRID[row_index][col_index] : undefined;
 
   return grid_cell;
-};
+}
+
+console.log(lightCell("B4"));
 
 module.exports = {
   lightCell
