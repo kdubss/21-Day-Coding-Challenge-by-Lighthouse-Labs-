@@ -35,24 +35,33 @@ describe("Testing behavioural functionality of GRID dimension functions", () => 
     it("should return the no. rows in the array for GRID", () => {
       assert.equal(countRows(), 10);
     });
+    it("should return a number as an output", () => {
+      expect(countRows()).to.be.a("number");
+    })
   });
   describe("countColumns() - day2 challenge", () => {
     it("should return the no. columns for each row, in the GRID array", () => {
       assert.equal(countColumns(), 10);
     });
+    it("should return a number as an output", () => {
+      expect(countColumns()).to.be.a("number");
+    })
   });
   
-  describe("gridSize() & totalCells() functions (day3 & day4, \
-respectively)", () => {
-    describe("gridSize() - day3 challenge", () => {
-      it("should return '10 x 10' (rows x columns) for the size of GRID", () => {
-        assert.equal(gridSize(), "10 x 10");
-      });
-    })
-    describe("totalCells() - day4 challenge", () => {
-      it("should return 100 for the total # of cells in GRID", () => {
-        assert.equal(totalCells(), 100);
-      });
+  describe("gridSize() - day3 challenge", () => {
+    it("should return '10 x 10' (rows x columns) for the size of GRID", () => {
+      assert.equal(gridSize(), "10 x 10");
+    });
+    it("should return a string as an ouput", () => {
+      expect(gridSize()).to.be.a("string");
+    });
+  })
+  describe("totalCells() - day4 challenge", () => {
+    it("should return 100 for the total # of cells in GRID", () => {
+      assert.equal(totalCells(), 100);
+    });
+    it("should return a number as an output", () => {
+      expect(totalCells()).to.be.a("number");
     });
   });
 });
@@ -60,20 +69,30 @@ respectively)", () => {
 describe("Testing behavioural functionality for converting GRID dimensions to \
 JavaScipt GRID indices", () => {
   describe("convertColumn() - day5 challenge", () => {
-    it("should, when given a coordinate ('C4'), return the number of the column in GRID", () => {
+    it("should, when given a coordinate ('C4'), return the number of the \
+column in GRID", () => {
       assert.equal(convertColumn("C4"), 2);
+    });
+    it("should return an integer-number as an output", () => {
+      expect(convertColumn("C4")).to.be.a("number");
     });
   })
   describe("convertRow() - day6 challenge", () => {
-    it("convertRow(), when given a coordinate ('B10'), should return the \
-number of the row in GRID", () => {
+    it("should, when given a coordinate ('B10'), return the number of the \
+row in GRID", () => {
       assert.equal(convertRow("B10"), 9);
+    });
+    it("should return an integer-number as an output", () => {
+      expect(convertRow("B10")).to.be.a("number");
     });
   });
   
   describe("lightCell() - day6 challenge", () => {
-    it("lightCell(), when given a coordinate ('C2'), should return the contents of GRID for that coordinate if both the row index && the col index is < 10 ('v' for coordinate 'C2').", () => {
+    it("should, when given a coordinate ('C2'), return the contents of GRID for that coordinate if both the row index && the col index is < 10 ('v' for coordinate 'C2').", () => {
       assert.equal(lightCell("C2"), "v");
+    });
+    it("should return a string as an output", () => {
+      expect(lightCell("C2")).to.be.a("string");
     });
   });
 });
@@ -85,11 +104,30 @@ objects (i.e. rocks, currents, ships)", () => {
 the cell contents of GRID is a rock ('^')", () => {
       assert.equal(isRock("D1"), true);
     });
+    it("should return a Boolean as an output", () => {
+      expect(isRock("D1")).to.be.boolean();
+    });
+    it("should return Boolean true for GRID coords with rocks ('^')", () => {
+      expect(isRock("D1")).to.be.true;
+    })
+    it("should return Boolean false for GRID coords without rocks", () => {
+      expect(isRock("A1")).to.be.false;
+    })
   });
   describe("isCurrent() - day8 challenge", () => {
     it("should, when given a coordinate ('E2'), return true or false if \
 the cell contents of GRID is a current ('~')", () => {
       assert.equal(isCurrent("E2"), true);
+    });
+    it("should return a Boolean as an output", () => {
+      expect(isCurrent("E2")).to.be.boolean();
+    });
+    it("should return Boolean true for GRID coords containing \
+currents ('~')", () => {
+      expect(isCurrent("E2")).to.be.true;
+    })
+    it("should return Boolean false for GRID coords without currents", () => {
+      expect(isCurrent("D4")).to.be.false;
     });
   });
   describe("isShip() - day9 challenge", () => {
