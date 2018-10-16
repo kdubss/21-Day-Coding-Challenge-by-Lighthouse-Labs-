@@ -1,6 +1,10 @@
 // ./test/test.js
+const chai = require("chai");
 const assert = require("chai").assert;
 const expect = require("chai").expect;
+const asserttype = require("chai-asserttype");
+
+chai.use(asserttype);
 
 const GRID = require("../functions/grid").GRID;
 const countRows = require("../functions/countRows").countRows
@@ -18,6 +22,14 @@ const lightColumn = require("../functions/lightColumn").lightColumn;
 const allRocks = require("../functions/allRocks").allRocks;
 const allCurrents = require("../functions/allCurrents").allCurrents;
 const allShips = require("../functions/allShips").allShips;
+const firstRock = require("../functions/firstRock").firstRock;
+const getFirstRockInEachRow = require("../functions/firstRock").getFirstRockInEachRow
+
+describe("Testing GRID array", () => {
+  it("GRID should be of type 'Array'", () => {
+    expect(GRID).to.be.array();
+  });
+});
 
 describe("Testing behavioural functionality of GRID dimension functions", () => {
   describe("countRows() & countColumns() functions (day1 & day2, respectively)", () => {
@@ -102,3 +114,22 @@ that contain ships ('v')", () => {
     });
   });
 })
+
+describe("Testing behavioural functionality of day15 challenge", () => {
+  describe("firstRock() - day15 challenge", () => {
+    describe("getFirstRockInEachRow()", () => {
+      it("should return an output of type Array", () => {
+        expect(getFirstRockInEachRow()).to.be.an("array");
+      });
+      it("should have an array of numbers in the output array", () => {
+        expect(getFirstRockInEachRow()).to.contain(getFirstRockInEachRow()).to.be.a("number");
+      });
+    });
+    it("should return 'First Rock!'", () => {
+      assert(firstRock(), "First Rock!");
+    });
+    it("should return a type 'string' as output", () => {
+      expect(firstRock()).to.be.string();
+    });
+  });
+});
