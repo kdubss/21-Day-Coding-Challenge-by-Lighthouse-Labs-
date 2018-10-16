@@ -10,6 +10,7 @@
     "chai": "^4.2.0"
   },
   "devDependencies": {
+    "chai-asserttype": "^1.0.5",
     "mocha": "^5.2.0"
   },
   "scripts": {
