@@ -23,7 +23,6 @@ const allRocks = require("../functions/allRocks").allRocks;
 const allCurrents = require("../functions/allCurrents").allCurrents;
 const allShips = require("../functions/allShips").allShips;
 const firstRock = require("../functions/firstRock").firstRock;
-const getFirstRockInEachRow = require("../functions/firstRock").getFirstRockInEachRow
 
 describe("Testing GRID array", () => {
   it("GRID should be of type 'Array'", () => {
@@ -117,19 +116,11 @@ that contain ships ('v')", () => {
 
 describe("Testing behavioural functionality of day15 challenge", () => {
   describe("firstRock() - day15 challenge", () => {
-    describe("getFirstRockInEachRow()", () => {
-      it("should return an output of type Array", () => {
-        expect(getFirstRockInEachRow()).to.be.an("array");
-      });
-      it("should have an array of numbers in the output array", () => {
-        expect(getFirstRockInEachRow()).to.contain(getFirstRockInEachRow()).to.be.a("number");
-      });
-    });
-    it("should return 'First Rock!'", () => {
-      assert(firstRock(), "First Rock!");
-    });
-    it("should return a type 'string' as output", () => {
+    it("should return an output of type String", () => {
       expect(firstRock()).to.be.string();
+    });
+    it("should return coordinate 'D1' as the instance of first rock", () => {
+      expect(firstRock()).to.equal("D1");
     });
   });
 });
