@@ -88,8 +88,12 @@ row in GRID", () => {
   });
   
   describe("lightCell() - day6 challenge", () => {
-    it("should, when given a coordinate ('C2'), return the contents of GRID for that coordinate if both the row index && the col index is < 10 ('v' for coordinate 'C2').", () => {
+    it("should, when given a coordinate ('C2'), return the contents of \
+GRID for that coordinate if both the row index && the col index \
+is < 10 ('v' for coordinate 'C2').", () => {
       assert.equal(lightCell("C2"), "v");
+      assert.equal(lightCell("B3"), "v", "GRID coordinate 'B3' should \
+equal 'v'.");
     });
     it("should return a string as an output", () => {
       expect(lightCell("C2")).to.be.a("string");
@@ -181,6 +185,34 @@ describe("Testing behavioural functionality of day15 challenge", () => {
     });
     it("should return coordinate 'D1' as the instance of first rock", () => {
       expect(firstRock()).to.equal("D1");
+    });
+  });
+});
+
+describe("Testing behavioural functionality of day16 challenge.", () => {
+  describe("firstShip() function", () => {
+    const firstShip = () => {
+      const ships_arr = [];
+      const ship = "v";
+      
+      for (let row = 0; row < countRows(); row++) {
+        for (let col = 0; col < countColumns(); col++) {
+          if (GRID[row][col] === ship) {
+            const ship_coord = "abcdefghikjlmnopqrstuvwxyz".toUpperCase().charAt(col) + (row + 1).toString();
+            ships_arr.push(ship_coord);
+          }
+        }
+      }
+      
+      const first_ship = ships_arr[0]
+      
+      return first_ship;
+    };
+    it("should return a string as output", () => {
+      expect(firstShip()).to.be.a("string");
+    });
+    it("should return 'C2' as the GRID coordinate of the first ship", () => {
+      assert.equal(firstShip(), "C2");
     });
   });
 });
