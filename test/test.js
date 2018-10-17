@@ -190,29 +190,29 @@ describe("Testing behavioural functionality of day15 challenge", () => {
 });
 
 describe("Testing behavioural functionality of day16 challenge.", () => {
-  describe("firstShip() function", () => {
-    const firstShip = () => {
-      const ships_arr = [];
-      const ship = "v";
+  describe("firstCurrent() function", () => {
+    const firstCurrent = () => {
+      const currents_arr = [];
+      const current = "~";
       
       for (let row = 0; row < countRows(); row++) {
         for (let col = 0; col < countColumns(); col++) {
-          if (GRID[row][col] === ship) {
-            const ship_coord = "abcdefghikjlmnopqrstuvwxyz".toUpperCase().charAt(col) + (row + 1).toString();
-            ships_arr.push(ship_coord);
+          if (GRID[row][col] === current) {
+            const current_coord = "abcdefghikjlmnopqrstuvwxyz".toUpperCase().charAt(col) + (row + 1).toString();
+            currents_arr.push(current_coord);
           }
         }
       }
       
-      const first_ship = ships_arr[0]
+      const first_current = currents_arr[0]
       
-      return first_ship;
+      return first_current;
     };
     it("should return a string as output", () => {
-      expect(firstShip()).to.be.a("string");
+      expect(firstCurrent()).to.be.a("string");
     });
-    it("should return 'C2' as the GRID coordinate of the first ship", () => {
-      assert.equal(firstShip(), "C2");
+    it("should return 'E2' as the GRID coordinate of the first ship", () => {
+      assert.equal(firstCurrent(), "E2");
     });
   });
 });
