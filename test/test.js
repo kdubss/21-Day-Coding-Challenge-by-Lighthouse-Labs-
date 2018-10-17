@@ -23,6 +23,7 @@ const allRocks = require("../functions/allRocks").allRocks;
 const allCurrents = require("../functions/allCurrents").allCurrents;
 const allShips = require("../functions/allShips").allShips;
 const firstRock = require("../functions/firstRock").firstRock;
+const firstCurrent = require("../functions/firstCurrent").firstCurrent;
 
 describe("Testing GRID array", () => {
   it("GRID should be of type 'Array'", () => {
@@ -191,27 +192,10 @@ describe("Testing behavioural functionality of day15 challenge", () => {
 
 describe("Testing behavioural functionality of day16 challenge.", () => {
   describe("firstCurrent() function", () => {
-    const firstCurrent = () => {
-      const currents_arr = [];
-      const current = "~";
-      
-      for (let row = 0; row < countRows(); row++) {
-        for (let col = 0; col < countColumns(); col++) {
-          if (GRID[row][col] === current) {
-            const current_coord = "abcdefghikjlmnopqrstuvwxyz".toUpperCase().charAt(col) + (row + 1).toString();
-            currents_arr.push(current_coord);
-          }
-        }
-      }
-      
-      const first_current = currents_arr[0]
-      
-      return first_current;
-    };
     it("should return a string as output", () => {
       expect(firstCurrent()).to.be.a("string");
     });
-    it("should return 'E2' as the GRID coordinate of the first ship", () => {
+    it("should return 'E2' as the GRID coordinate of the first current", () => {
       assert.equal(firstCurrent(), "E2");
     });
   });
