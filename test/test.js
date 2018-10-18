@@ -25,6 +25,7 @@ const allShips = require("../functions/allShips").allShips;
 const firstRock = require("../functions/firstRock").firstRock;
 const firstCurrent = require("../functions/firstCurrent").firstCurrent;
 const getSortedShipCoords = require("../functions/getSortedShipCoords").getSortedShipCoords;
+const shipReport = require("../functions/shipReport").shipReport;
 
 describe("Testing GRID array", () => {
   it("GRID should be of type 'Array'", () => {
@@ -204,23 +205,6 @@ describe("Testing behavioural functionality of day16 challenge.", () => {
 
 describe("Testing behavioural functionality of day17 challenge", () => {
   describe("getSortedShipCoords() function", () => {
-    const getSortedShipCoords = () => {
-      let ship_coords = [];
-      const ship = "v";
-      
-      for (let row = 0; row < countRows(); row++) {
-        for (let col = 0; col < countColumns(); col ++) {
-          if (GRID[row][col] === ship) {
-            const coord = "abcdefghijklmnopqrstuvwxyz".toUpperCase().charAt(col) + (row + 1).toString();
-            ship_coords.push(coord);
-          }
-        }
-      }
-      
-      ship_coords = ship_coords.sort();
-      
-      return ship_coords;
-    };
     it("should return a type array as output", () => {
       expect(getSortedShipCoords()).to.be.an("array");
     });
@@ -230,15 +214,6 @@ describe("Testing behavioural functionality of day17 challenge", () => {
     });
   });
   describe("shipReport() function", () => {
-    const shipReport = () => {
-      const sorted_ship_coords = getSortedShipCoords();
-      const first_and_last_ship = [
-        sorted_ship_coords[0],
-        sorted_ship_coords[sorted_ship_coords.length - 1]
-      ];
-      
-      return first_and_last_ship;
-    };
     it("should return an array as an output type", () => {
       expect(shipReport()).to.be.an("array");
     });
