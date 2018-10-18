@@ -24,6 +24,7 @@ const allCurrents = require("../functions/allCurrents").allCurrents;
 const allShips = require("../functions/allShips").allShips;
 const firstRock = require("../functions/firstRock").firstRock;
 const firstCurrent = require("../functions/firstCurrent").firstCurrent;
+const getSortedShipCoords = require("../functions/getSortedShipCoords").getSortedShipCoords;
 
 describe("Testing GRID array", () => {
   it("GRID should be of type 'Array'", () => {
@@ -159,7 +160,7 @@ corresponding to that column in GRID", () => {
     });
   });
   describe("allRocks() - day13 challenge", () => {
-    it("should, when called, return an array of coordinates of all GRID \
+    it("should, when called, return an array of coordinates of all GRID\
 cells that contain rocks ('^')", () => {
       expect(allRocks()).to.eql(["D1", "E3", "F3", "E4", "F4", "B8", "H8", "B9", 
       "B10"]);
@@ -202,8 +203,8 @@ describe("Testing behavioural functionality of day16 challenge.", () => {
 });
 
 describe("Testing behavioural functionality of day17 challenge", () => {
-  describe("getShip() function", () => {
-    const getShipCoords = () => {
+  describe("getSortedShipCoords() function", () => {
+    const getSortedShipCoords = () => {
       let ship_coords = [];
       const ship = "v";
       
@@ -221,22 +222,29 @@ describe("Testing behavioural functionality of day17 challenge", () => {
       return ship_coords;
     };
     it("should return a type array as output", () => {
-      expect(getShipCoords()).to.be.an("array");
+      expect(getSortedShipCoords()).to.be.an("array");
     });
-    it("should return an array with GRID elements corresponding to ships - 'v', but sorted in alphabetical order", () => {
-      expect(getShipCoords()).to.eql(["B3", "C2", "I5"]);
+    it("should return an array with GRID elements corresponding to ships - \
+'v', but sorted in alphabetical order", () => {
+      expect(getSortedShipCoords()).to.eql(["B3", "C2", "I5"]);
     });
   });
-  
   describe("shipReport() function", () => {
     const shipReport = () => {
-      const first_and_last_ship = [];
-      
+      const sorted_ship_coords = getSortedShipCoords();
+      const first_and_last_ship = [
+        sorted_ship_coords[0],
+        sorted_ship_coords[sorted_ship_coords.length - 1]
+      ];
       
       return first_and_last_ship;
     };
     it("should return an array as an output type", () => {
       expect(shipReport()).to.be.an("array");
+    });
+    it("should return a sorted array of the the first and last ship \
+coordinates within GRID ('B3', 'I5')", () => {
+      expect(shipReport()).to.eql(['B3', 'I5']);
     });
   });
 });
