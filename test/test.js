@@ -3,9 +3,12 @@ const chai = require("chai");
 const assert = require("chai").assert;
 const expect = require("chai").expect;
 const asserttype = require("chai-asserttype");
+const chaiParam = require("chai-param");
 
 chai.use(asserttype);
+chai.use(chaiParam);
 
+const param = chaiParam.param;
 const GRID = require("../functions/grid").GRID;
 const countRows = require("../functions/countRows").countRows
 const countColumns = require("../functions/countColumns").countColumns;
@@ -26,6 +29,7 @@ const firstRock = require("../functions/firstRock").firstRock;
 const firstCurrent = require("../functions/firstCurrent").firstCurrent;
 const getSortedShipCoords = require("../functions/getSortedShipCoords").getSortedShipCoords;
 const shipReport = require("../functions/shipReport").shipReport;
+const filterGridBy = require("../functions/filterGridBy").filterGridBy;
 
 describe("Testing GRID array", () => {
   it("GRID should be of type 'Array'", () => {

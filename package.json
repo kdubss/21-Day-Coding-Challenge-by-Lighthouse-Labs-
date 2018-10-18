@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "chai-asserttype": "^1.0.5",
+    "chai-param": "^0.1.2",
     "mocha": "^5.2.0"
   },
   "scripts": {

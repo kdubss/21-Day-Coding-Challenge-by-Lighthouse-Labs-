@@ -18,7 +18,6 @@ const filterGridBy = (fltr_by) => {
   return filtered_array;
 };
 
-const filter_by = ["^", "v", "~"];
-for (let row = 0; row < filter_by.length; row++) {
-  console.log(filterGridBy(filter_by[row]));
-}
+module.exports = {
+  filterGridBy
+};
