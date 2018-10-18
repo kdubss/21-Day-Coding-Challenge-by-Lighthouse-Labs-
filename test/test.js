@@ -204,7 +204,7 @@ describe("Testing behavioural functionality of day16 challenge.", () => {
 describe("Testing behavioural functionality of day17 challenge", () => {
   describe("getShip() function", () => {
     const getShipCoords = () => {
-      const ship_coords = [];
+      let ship_coords = [];
       const ship = "v";
       
       for (let row = 0; row < countRows(); row++) {
@@ -216,20 +216,21 @@ describe("Testing behavioural functionality of day17 challenge", () => {
         }
       }
       
+      ship_coords = ship_coords.sort();
+      
       return ship_coords;
     };
     it("should return a type array as output", () => {
       expect(getShipCoords()).to.be.an("array");
     });
-    it("should return an array with elements 'C2', 'B3', 'I5'", () => {
-      expect(getShipCoords()).to.eql(["C2", "B3", "I5"]);
+    it("should return an array with GRID elements corresponding to ships - 'v', but sorted in alphabetical order", () => {
+      expect(getShipCoords()).to.eql(["B3", "C2", "I5"]);
     });
   });
   
   describe("shipReport() function", () => {
     const shipReport = () => {
       const first_and_last_ship = [];
-      
       
       
       return first_and_last_ship;
