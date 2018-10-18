@@ -1,6 +1,12 @@
-// ./converRow.js
+// ./functions/converRow.js
 const GRID = require("./grid.js").GRID;
 
+/**
+ * [Function to fetch the length of GRID, the global variable referencing
+ *  a 10x10 array]
+ * @return {[Integer]} [Numerical integer specifying the rows (i.e. length)
+ *                      of the GRID global variable]
+ */
 const convertRow = coordinate => {
   const row_num = coordinate.slice(1);
   const is_row_valid = row_num <= 10;

@@ -39,36 +39,50 @@ describe("Testing GRID array", () => {
 
 describe("Testing behavioural functionality of GRID dimension functions", () => {
   describe("countRows() - day1 challenge", () => {
+    it("should return a truthy value", () => {
+      assert.ok(countRows());
+    })
     it("should return the no. rows in the array for GRID", () => {
       assert.equal(countRows(), 10);
     });
     it("should return a number as an output", () => {
-      expect(countRows()).to.be.a("number");
-    })
+      assert.isNumber(countRows());
+    });
   });
+  
   describe("countColumns() - day2 challenge", () => {
+    it("should return a truthy value", () => {
+      assert.ok(countColumns());
+    });
     it("should return the no. columns for each row, in the GRID array", () => {
       assert.equal(countColumns(), 10);
     });
     it("should return a number as an output", () => {
-      expect(countColumns()).to.be.a("number");
+      assert.isNumber(countColumns());
     })
   });
   
   describe("gridSize() - day3 challenge", () => {
+    it("should return a truthy value", () => {
+      assert.ok(gridSize());
+    });
     it("should return '10 x 10' (rows x columns) for the size of GRID", () => {
       assert.equal(gridSize(), "10 x 10");
     });
     it("should return a string as an ouput", () => {
-      expect(gridSize()).to.be.a("string");
+      assert.isString(gridSize());
     });
   })
+  
   describe("totalCells() - day4 challenge", () => {
+    it("should return a truthy value", () => {
+      assert.ok(totalCells());
+    });
     it("should return 100 for the total # of cells in GRID", () => {
       assert.equal(totalCells(), 100);
     });
     it("should return a number as an output", () => {
-      expect(totalCells()).to.be.a("number");
+      assert.isNumber(totalCells());
     });
   });
 });
@@ -81,16 +95,18 @@ column in GRID", () => {
       assert.equal(convertColumn("C4"), 2);
     });
     it("should return an integer-number as an output", () => {
-      expect(convertColumn("C4")).to.be.a("number");
+      assert.isNumber(convertColumn("C4"));
     });
   })
+  
   describe("convertRow() - day6 challenge", () => {
     it("should, when given a coordinate ('B10'), return the number of the \
 row in GRID", () => {
       assert.equal(convertRow("B10"), 9);
     });
     it("should return an integer-number as an output", () => {
-      expect(convertRow("B10")).to.be.a("number");
+      assert.isNumber(convertRow("B10"));
+      expect(convertRow("B10")).to.equal(9)
     });
   });
   
@@ -103,6 +119,7 @@ is < 10 ('v' for coordinate 'C2').", () => {
 equal 'v'.");
     });
     it("should return a string as an output", () => {
+      assert.isString(lightCell("C2"));
       expect(lightCell("C2")).to.be.a("string");
     });
   });

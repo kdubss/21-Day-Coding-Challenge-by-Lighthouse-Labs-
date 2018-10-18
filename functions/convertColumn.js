@@ -1,7 +1,12 @@
-// ./convertColumn.js
+// ./functions/convertColumn.js
 const GRID = require("./grid").GRID;
 const countColumns = require("./countColumns").countColumns;
 
+/**
+ * [convertColumn description]
+ * @param  {[String]} coordinate [Column & Row of GRID cell ("A1")]
+ * @return {[Number - Integer]} [The col no - 1, specified by coordinate input]
+ */
 const convertColumn = coordinate => {
   const letters = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
   const coord_letter = coordinate[0].toUpperCase();
@@ -10,6 +15,8 @@ const convertColumn = coordinate => {
   
   return col_index;
 };
+
+console.log(convertColumn("A3"));
 
 module.exports = {
   convertColumn
