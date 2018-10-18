@@ -161,20 +161,20 @@ corresponding to that column in GRID", () => {
   describe("allRocks() - day13 challenge", () => {
     it("should, when called, return an array of coordinates of all GRID \
 cells that contain rocks ('^')", () => {
-      assert(allRocks(), ["D1", "E3", "F3", "E4", "F4", "B8", "H8", "B9", 
+      expect(allRocks()).to.eql(["D1", "E3", "F3", "E4", "F4", "B8", "H8", "B9", 
       "B10"]);
     });
   })
   describe("allCurrents() - day13 challenge", () => {
     it("should, when called, return an array of coordinates of all GRID cells \
 that contain currents ('~')", () => {
-      assert(allCurrents(), ["E2", "C8", "D8", "D9", "E10", "F10"]);
+      expect(allCurrents()).to.eql(["E2", "C8", "D8", "D9", "E10", "F10"]);
     });
   })
   describe("allShips() - day14 challenge", () => {
     it("should, when called, return an array of coordinates of all GRID cdells \
 that contain ships ('v')", () => {
-      assert(allShips(), ["C2", "B3", "I5"]);
+      expect(allShips()).to.eql(["C2", "B3", "I5"]);
     });
   });
 })
@@ -197,6 +197,45 @@ describe("Testing behavioural functionality of day16 challenge.", () => {
     });
     it("should return 'E2' as the GRID coordinate of the first current", () => {
       assert.equal(firstCurrent(), "E2");
+    });
+  });
+});
+
+describe("Testing behavioural functionality of day17 challenge", () => {
+  describe("getShip() function", () => {
+    const getShipCoords = () => {
+      const ship_coords = [];
+      const ship = "v";
+      
+      for (let row = 0; row < countRows(); row++) {
+        for (let col = 0; col < countColumns(); col ++) {
+          if (GRID[row][col] === ship) {
+            const coord = "abcdefghijklmnopqrstuvwxyz".toUpperCase().charAt(col) + (row + 1).toString();
+            ship_coords.push(coord);
+          }
+        }
+      }
+      
+      return ship_coords;
+    };
+    it("should return a type array as output", () => {
+      expect(getShipCoords()).to.be.an("array");
+    });
+    it("should return an array with elements 'C2', 'B3', 'I5'", () => {
+      expect(getShipCoords()).to.eql(["C2", "B3", "I5"]);
+    });
+  });
+  
+  describe("shipReport() function", () => {
+    const shipReport = () => {
+      const first_and_last_ship = [];
+      
+      
+      
+      return first_and_last_ship;
+    };
+    it("should return an array as an output type", () => {
+      expect(shipReport()).to.be.an("array");
     });
   });
 });
