@@ -4,6 +4,7 @@ const countRows = require("./countRows").countRows;
 const countColumns = require("./countColumns").countColumns;
 const isRock = require("./isRock").isRock;
 const isCurrent = require("./isCurrent").isCurrent;
+const assessDanger = require("./assessDanger").assessDanger;
 
 /**
  * [howDangerous assess the dangers of coord-cells in GRID]
@@ -11,16 +12,12 @@ const isCurrent = require("./isCurrent").isCurrent;
  * @return {[Integer]}       [Number assessing the danger of a GRID's cell]
  */
 const howDangerous = coord => {
-  let assess_danger;
+  const danger = assessDanger(coord);
   
-  if (isRock(coord)) {
-    assess_danger = 100;
-  } else if (isCurrent(coord)) {
-    assess_danger = 50;
-  }
-  
-  return assess_danger;
+  return danger;
 };
+
+console.log(howDangerous("E1"));
 
 module.exports = {
   howDangerous
