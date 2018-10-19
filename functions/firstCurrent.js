@@ -4,6 +4,10 @@ const countRows = require("./countRows").countRows;
 const countColumns = require("./countColumns").countColumns;
 const filterGridBy = require("./filterGridBy").filterGridBy;
 
+/**
+ * [firstCurrent returns GRID coordinate of first current]
+ * @return {[String]} [String coordinate ("E3") of GRID corresponding to first current]
+ */
 const firstCurrent = () => {
   const current = "~";
   const current_coords = filterGridBy(current);

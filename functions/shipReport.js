@@ -4,6 +4,9 @@ const countRows = require("./countRows").countRows;
 const countColumns = require("./countColumns").countColumns;
 const getSortedShipCoords = require("./getSortedShipCoords").getSortedShipCoords;
 
+/**
+ * [shipReport returns GRID coordinates of first and last ship]
+ */
 const shipReport = () => {
   const sorted_ship_coords = getSortedShipCoords();
   const first_and_last_ship = [
