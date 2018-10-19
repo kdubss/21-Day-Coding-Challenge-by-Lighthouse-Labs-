@@ -1,4 +1,4 @@
-// ./isRock.js
+// ./functions/isRock.js
 const GRID = require("./grid").GRID;
 const lightCell = require("./lightCell").lightCell;
 

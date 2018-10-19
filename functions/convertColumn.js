@@ -16,8 +16,6 @@ const convertColumn = coordinate => {
   return col_index;
 };
 
-console.log(convertColumn("A3"));
-
 module.exports = {
   convertColumn
 };

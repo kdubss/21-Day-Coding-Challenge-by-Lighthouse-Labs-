@@ -1,4 +1,4 @@
-// ./day6.js
+// ./day7.js
 
 // ## Challenge #7
 // In the area where the lighthouse is watching, the grid, there are many
@@ -44,7 +44,7 @@ const isRock = coordinate => {
     return GRID[grid_row][row_col];
   };
   const rock = "^";
-  const is_rock = lightCell(coordinate) === rock ? true : false;
+  const is_rock = lightCell(coordinate) === rock
   
   return is_rock;
 };

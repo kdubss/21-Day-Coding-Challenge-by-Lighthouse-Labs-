@@ -18,8 +18,6 @@ const lightCell = coord => {
   return grid_cell;
 }
 
-console.log(lightCell("B4"));
-
 module.exports = {
   lightCell
 };
