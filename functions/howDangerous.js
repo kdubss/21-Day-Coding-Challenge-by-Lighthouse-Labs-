@@ -1,9 +1,5 @@
 // ./functions/howDangerous.js
 const GRID = require("./grid").GRID;
-const countRows = require("./countRows").countRows;
-const countColumns = require("./countColumns").countColumns;
-const isRock = require("./isRock").isRock;
-const isCurrent = require("./isCurrent").isCurrent;
 const assessDanger = require("./assessDanger").assessDanger;
 
 /**
@@ -16,8 +12,6 @@ const howDangerous = coord => {
   
   return danger;
 };
-
-console.log(howDangerous("E1"));
 
 module.exports = {
   howDangerous
