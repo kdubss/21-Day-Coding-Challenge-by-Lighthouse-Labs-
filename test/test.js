@@ -277,15 +277,21 @@ describe("Testing behavioural fundtionality of day18 challenge", () => {
 });
 
 describe("Testing behavioural functionality of day 19 challenge", () => {
-  describe("calculatePercentage() function", () => {
+  describe("getPercentageOfInGrid() function", () => {
+    const getPercentageOfInGrid = (of_what) => {
+      const proportion_of = (filterGridBy(of_what).length / totalCells()) * 100;
+      const percentage_of = proportion_of.toFixed(2);
+      
+      return percentage_of;
+    }
     it("should be defined", () => {
-      assert.isDefined(calculatePercentage);
+      assert.isDefined(getPercentageOfInGrid);
     });
     it("should be a typeof function", () => {
-      assert.isFunction(calculatePercentage);
+      assert.isFunction(getPercentageOfInGrid);
     });
     it("should return a floating-point number string (i.e. 2.00)", () => {
-      assert.isString(calculatePercentage);
+      assert.isString(getPercentageOfInGrid());
     });
   });
   describe("percentageReport() function", () => {
