@@ -1,9 +1,5 @@
 // ./functions/percentageReport.js
 const GRID = require("./grid").GRID;
-const countRows = require("./countRows").countRows;
-const countColumns = require("./countColumns").countColumns;
-const totalCells = require("./totalCells").totalCells;
-const filterGridBy = require("./filterGridBy").filterGridBy;
 const getPercentageOfInGrid = require("./getPercentageOfInGrid").getPercentageOfInGrid;
 
 /**

@@ -1,7 +1,5 @@
 // ./functions/firstCurrent.js
 const GRID = require("./grid").GRID;
-const countRows = require("./countRows").countRows;
-const countColumns = require("./countColumns").countColumns;
 const filterGridBy = require("./filterGridBy").filterGridBy;
 
 /**

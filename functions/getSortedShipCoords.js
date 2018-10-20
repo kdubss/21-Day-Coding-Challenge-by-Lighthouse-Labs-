@@ -1,7 +1,5 @@
 // ./functions/getSortedShipCoords.js
 const GRID = require("./grid").GRID;
-const countColumns = require("./countColumns").countColumns;
-const countRows = require("./countRows").countRows;
 const filterGridBy = require("./filterGridBy").filterGridBy;
 
  /**
