@@ -244,3 +244,57 @@ coordinates within GRID ('B3', 'I5')", () => {
     });
   });
 });
+
+describe("Testing behavioural fundtionality of day18 challenge", () => {
+  describe("howDangerous() function", () => {
+    const howDangerous = () => {
+      const rock = "^";
+      const current = "~";
+      let how_dangerous;
+      
+      for (let row = 0; row < countRows(); row++) {
+        for (let col = 0; col < countColumns(); col++) {
+          if (GRID[row][col] === rock) {
+            how_dangerous = 100;
+          } else if (GRID[row][col] === current) {
+            how_dangerous = 50;
+          }
+        }
+      }
+      
+      return how_dangerous;
+    };
+    it("should be defined", () => {
+      assert.isDefined(howDangerous);
+    });
+    it("should be a function", () => {
+      assert.isFunction(howDangerous);
+    });
+    it("should return an integer number", () => {
+      assert.isNumber(howDangerous());
+    });
+  });
+});
+
+describe("Testing behavioural functionality of day 19 challenge", () => {
+  describe("percentage() function", () => {
+    const percentageReport = () => {
+
+    };
+    it("should be defined", () => {
+      assert.isDefined(percentageReport);
+    });
+    it("should be a function", () => {
+      assert.isFunction(percentageReport);
+    });
+    it("should return an array of floats", () => {
+      assert.isArray(percentageReport());
+    });
+    it("should return an array of length 2", () => {
+      assert.lengthOf(percentageReport(), 2);
+    });
+    it("should return an array [9.00, 7.00]", () => {
+      assert.equal(percentageReport(), [9.00.toFixed(2), 7.00.toFixed(2)]);
+    })
+  });
+});
