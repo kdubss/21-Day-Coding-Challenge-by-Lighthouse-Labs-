@@ -277,7 +277,18 @@ describe("Testing behavioural fundtionality of day18 challenge", () => {
 });
 
 describe("Testing behavioural functionality of day 19 challenge", () => {
-  describe("percentage() function", () => {
+  describe("calculatePercentage() function", () => {
+    it("should be defined", () => {
+      assert.isDefined(calculatePercentage);
+    });
+    it("should be a typeof function", () => {
+      assert.isFunction(calculatePercentage);
+    });
+    it("should return a floating-point number string (i.e. 2.00)", () => {
+      assert.isString(calculatePercentage);
+    });
+  });
+  describe("percentageReport() function", () => {
     const percentageReport = () => {
 
     };
