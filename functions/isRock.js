@@ -7,12 +7,7 @@ const lightCell = require("./lightCell").lightCell;
  * @param  {[String]}  coord [String value ("D1") for a GRID cell]
  * @return {Boolean}       [true if GRID cell is a rock ("^")]
  */
-const isRock = coord => {
-  const rock = "^";
-  const is_rock = lightCell(coord) === rock;
-  
-  return is_rock;
-};
+const isRock = coord => lightCell(coord) === "^";
 
 module.exports = {
   isRock

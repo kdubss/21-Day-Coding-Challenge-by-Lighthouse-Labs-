@@ -7,12 +7,7 @@ const lightCell = require("./lightCell").lightCell;
  * @param  {[Stirng]}  coord [String value ("E5") for a GRID cell]
  * @return {Boolean}       [true if GRID cell is a current ("~")]
  */
-const isCurrent = coord => {
-  const current = "~";
-  const is_current = lightCell(coord) === current;
-  
-  return is_current;
-};
+const isCurrent = coord => lightCell(coord) === "~";
 
 module.exports = {
   isCurrent

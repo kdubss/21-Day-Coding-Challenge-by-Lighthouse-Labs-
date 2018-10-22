@@ -7,12 +7,7 @@ const lightCell = require("./lightCell").lightCell;
  * @param  {[String]}  coord [String value ("A8") for a GRID cell]
  * @return {Boolean}       [true if GRID cell is a ship ("v")]
  */
-const isShip = coord => {
-  const ship = "V";
-  const is_ship = lightCell(coord).toUpperCase() === ship;
-  
-  return is_ship
-};
+const isShip = coord => lightCell(coord) === "v";
 
 module.exports = {
   isShip
