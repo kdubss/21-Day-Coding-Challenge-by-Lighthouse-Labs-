@@ -65,9 +65,19 @@ const calcDistance = (coord1, coord2) => {
   
   // Case 3: Both coords on different row AND column:
   //  - Essentially calculating the hypotenuse via. the pythagorean theorem
-  //  - i.e. 
+  //  - i.e. using the pythagorean theorem to calculate the hypotenuse of a right triangle.
+  const getHypotenuseDistance = (coord1, coord2) => {
+    const c1_row_index = getGridRowFromCoord(coord1); // x1
+    const c2_row_index = getGridRowFromCoord(coord2); // y1
+    const c1_col_index = getGridColumnFromCoord(coord1); // x2
+    const c2_col_index = getGridColumnFromCoord(coord2); // y2
+    const dist = parseFloat(Math.sqrt(((c2_col_index - c1_col_index) ** 2) + ((c2_row_index - c1_row_index) ** 2)));
+    
+    return dist.toFixed(2)
+  }
+  const distance = getHypotenuseDistance(coord1, coord2);
   
-  return getDistance4CellsOnSameColumn(coord1, coord2);
+  return distance;
 };
 
-console.log(calcDistance("D5", "D1"));
+console.log(calcDistance("A1", "J1"));
