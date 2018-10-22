@@ -30,6 +30,8 @@ const firstCurrent = require("../functions/firstCurrent").firstCurrent;
 const getSortedShipCoords = require("../functions/getSortedShipCoords").getSortedShipCoords;
 const shipReport = require("../functions/shipReport").shipReport;
 const filterGridBy = require("../functions/filterGridBy").filterGridBy;
+const getPercentageOfInGrid = require("../functions/getPercentageOfInGrid").getPercentageOfInGrid;
+const percentageReport = require("../functions/percentageReport").percentageReport;
 
 describe("Testing GRID array", () => {
   it("GRID should be of type 'Array'", () => {
@@ -191,7 +193,7 @@ cells that contain rocks ('^')", () => {
   describe("allCurrents() - day13 challenge", () => {
     it("should, when called, return an array of coordinates of all GRID cells \
 that contain currents ('~')", () => {
-      expect(allCurrents()).to.eql(["E2", "C8", "D8", "D9", "E10", "F10"]);
+      expect(allCurrents()).to.eql(["E2", "C8", "D8", "D9", "E9", "E10", "F10"]);
     });
   })
   describe("allShips() - day14 challenge", () => {
@@ -283,7 +285,7 @@ describe("Testing behavioural functionality of day 19 challenge", () => {
       const percentage_of = proportion_of.toFixed(2);
       
       return percentage_of;
-    }
+    };
     it("should be defined", () => {
       assert.isDefined(getPercentageOfInGrid);
     });
