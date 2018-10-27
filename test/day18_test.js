@@ -4,24 +4,8 @@ const expect = chai.expect;
 const should = chai.should;
 
 const GRID = require("../functions/grid").GRID;
-const isRock = require("../functions/isRock").isRock;
-const isCurrent = require("../functions/isCurrent").isCurrent;
-
-const howDangerous = coord => assessDanger(coord);
-
-const assessDanger = coord => {
-  let danger;
-  
-  if (isRock(coord)) {
-    danger = 100;
-  } else if (isCurrent(coord)) {
-    danger = 50;
-  } else {
-    danger = 0;
-  }
-  
-  return danger;
-};
+const howDangerous = require("../functions/howDangerous").howDangerous;
+const assessDanger = require("../functions/assessDanger").assessDanger;
 
 describe("Day 18 Chhallenge: howDangerous()", () => {
   it("should be defined", () => {
