@@ -7,11 +7,7 @@ const assessDanger = require("./assessDanger").assessDanger;
  * @param  {[String]} coord [GRID coordinate ("E2")]
  * @return {[Integer]}       [Number assessing the danger of a GRID's cell]
  */
-const howDangerous = coord => {
-  const danger = assessDanger(coord);
-  
-  return danger;
-};
+const howDangerous = coord => assessDanger(coord);
 
 module.exports = {
   howDangerous
